@@ -18,9 +18,13 @@
 
 
 ;;##################################### GHC-MOD Start ###############################
-(let ((my-cabal-path (expand-file-name "~/Library/Haskell/bin")))
-     (setenv "PATH" (concat my-cabal-path ":" (getenv "PATH")))
-     (add-to-list 'exec-path my-cabal-path))
+(let ((my-cabal-path "/usr/local/bin")
+      (my-ghc-mod-path (expand-file-name "~/Library/Haskell/bin"))
+      (my-stack-path (expand-file-name "~/.local/bin")))
+  (setenv "PATH" (concat my-cabal-path ":" my-ghc-mod-path ":" my-stack-path ":" (getenv "PATH")))
+  (add-to-list 'exec-path my-ghc-mod-path)
+  (add-to-list 'exec-path my-cabal-path)
+  (add-to-list 'exec-path my-stack-path))
 
 (autoload 'ghc-init "ghc" nil t)
 (autoload 'ghc-debug "ghc" nil t)
@@ -31,7 +35,6 @@
 (require 'company)
 (add-hook 'haskell-mode-hook 'company-mode)
 (add-to-list 'company-backends 'company-ghc)
-;;(custom-set-variables '(company-ghc-show-info t))
 (setq ac-modes '(haskell-mode))
 
 
@@ -52,6 +55,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(show-paren-mode t)
+ '(haskell-process-type 'stack-ghci)
  '(custom-enabled-themes (quote (wombat)))
  '(custom-set-variables (quote (company-ghc-show-info t)))
  '(package-selected-packages (quote (auto-complete company-ghc hindent ghc))))
