@@ -1,4 +1,13 @@
-# Using Emacs for Haskell development
+# Using Emacs for Haskell development (With some updates for newer versions)
+# MacOS 10.13.6
+# Haskell Platform 8.0.2, Emacs 26, Stack 1.7.1
+
+The original is a good place to start. I encountered some problems when I set up the environment following it. The steps I've taken are exactly written in this document:
+
+https://docs.google.com/document/d/1CVbv1g3JJNGthWYFAFPN1Dlyl9m4p7F-nzs3BwsXi-w/edit?usp=sharing
+
+
+The following is the same as the original as it is as of 02/09/2018.
 
 Emacs is a text editor with an amazing support for extensions. Many people have built add-ons for Emacs to deal with everything from e-mail to version control or agenda planning, but it excels in providing good support for programming. Emacs support for Haskell is actually amazingly good - it integrates highlighting, querying information, building with Cabal and even refactoring!
 
