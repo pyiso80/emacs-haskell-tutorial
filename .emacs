@@ -1,14 +1,14 @@
 (require 'tls)
 (add-to-list 'gnutls-trustfiles "/usr/local/etc/openssl/cert.pem")
 (require 'package)
-(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
-                    (not (gnutls-available-p))))
-       (proto (if no-ssl "http" "https")))
-(add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
-  ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
-  (when (< emacs-major-version 24)
-    ;; For important compatibility libraries like cl-lib
-    (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
+(let*
+    ((no-ssl (and (memq system-type '(windows-nt ms-dos)) (not (gnutls-available-p))))
+     (proto (if no-ssl "http" "https")))
+    (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
+    ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
+    (when (< emacs-major-version 24)
+      ;; For important compatibility libraries like cl-lib
+      (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
 
 ;;##################################### Haskell Start ###############################
@@ -19,8 +19,8 @@
 
 ;;##################################### GHC-MOD Start ###############################
 (let ((my-cabal-path (expand-file-name "~/Library/Haskell/bin")))
-  (setenv "PATH" (concat my-cabal-path ":" (getenv "PATH")))
-  (add-to-list 'exec-path my-cabal-path))
+     (setenv "PATH" (concat my-cabal-path ":" (getenv "PATH")))
+     (add-to-list 'exec-path my-cabal-path))
 
 (autoload 'ghc-init "ghc" nil t)
 (autoload 'ghc-debug "ghc" nil t)
@@ -51,6 +51,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(show-paren-mode t)
  '(custom-enabled-themes (quote (wombat)))
  '(custom-set-variables (quote (company-ghc-show-info t)))
  '(package-selected-packages (quote (auto-complete company-ghc hindent ghc))))
