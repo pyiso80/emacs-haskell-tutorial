@@ -1,6 +1,6 @@
 # Using Emacs for Haskell development (With some updates for newer versions)
-# MacOS 10.13.6
-# Haskell Platform 8.0.2, Emacs 26, Stack 1.7.1
+# MacOS High Sierra 10.13.6
+# Haskell Platform 8.0.2, Emacs 26, Stack 1.7.1, Intero 
 
 The original is a good place to start. I encountered some problems when I set up the environment following it. The steps I've taken are exactly written in this document:
 
