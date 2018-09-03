@@ -1,8 +1,8 @@
-# Using Emacs for Haskell development (With some updates for newer versions)
+# Setting up Emacs Haskell Development Environment on MacOS
 # MacOS High Sierra 10.13.6
 # Haskell Platform 8.0.2, Emacs 26, Stack 1.7.1, Intero 
 
-The original is a good place to start. I encountered some problems when I set up the environment following it. The steps I've taken are exactly written in this document:
+The original I forked from is a good place to start. I encountered some problems when I set up the environment following it. The steps I've taken are exactly written in this document:
 
 https://docs.google.com/document/d/1CVbv1g3JJNGthWYFAFPN1Dlyl9m4p7F-nzs3BwsXi-w/edit?usp=sharing
 
